@@ -1,0 +1,74 @@
+<Grid>
+          <Grid.Row columns={4}>
+            { myDetails1.map((detail, idx) => {
+                return (
+                  <Grid.Column>
+                    <Reveal animated='fade'>
+                      <Reveal.Content visible>
+                        <Image src={detail.imageURL} shape='circular' />
+                      </Reveal.Content>
+                      <Reveal.Content hidden>
+                        <span>
+                          {detail.text}
+                        </span>
+                      </Reveal.Content>
+                    </Reveal>
+                  </Grid.Column>
+                )
+            })}
+          </Grid.Row>
+          <Grid.Row columns={4}>
+            { myDetails2.map((detail, idx) => {
+                return (
+                  <Grid.Column>
+                    <Reveal animated='fade'>
+                      <Reveal.Content visible>
+                        <Image src={detail.imageURL} shape='circular' />
+                      </Reveal.Content>
+                      <Reveal.Content hidden>
+                        <span>
+                          {detail.text}
+                        </span>
+                      </Reveal.Content>
+                    </Reveal>
+                  </Grid.Column>
+                )
+            })}
+          </Grid.Row>
+        </Grid>
+
+
+        const myDetails = [
+  {
+    imageURL: 'http://semantic-ui.com/images/wireframe/image.png',
+    text: 'I AM DEVELOPER'
+  },
+  {
+    imageURL: 'http://semantic-ui.com/images/wireframe/image.png',
+    text: 'I GREW UP VIENNA'
+  },
+  {
+    imageURL: 'http://semantic-ui.com/images/wireframe/image.png',
+    text: 'I LIVE NYC'
+  },
+  {
+    imageURL: 'http://semantic-ui.com/images/wireframe/image.png',
+    text: 'I SANG'
+  },
+  {
+    imageURL: 'http://semantic-ui.com/images/wireframe/image.png',
+    text: 'I GIVE HEALTH'
+  },
+  {
+    imageURL: 'http://semantic-ui.com/images/wireframe/image.png',
+    text: 'I HAZ CAT'
+  },
+  {
+    imageURL: 'http://semantic-ui.com/images/wireframe/image.png',
+    text: 'I FEEL HEALTH'
+  },
+  {
+    imageURL: 'http://semantic-ui.com/images/wireframe/image.png',
+    text: 'SOMETHING ELSE'
+  },
+]
