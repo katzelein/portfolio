@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Icon, Grid, Button, Form, Message } from 'semantic-ui-react';
+import { Container, Icon, Grid, Button, Form, Message, Segment } from 'semantic-ui-react';
 
 const contactButtons = [
   { name: 'linkedin', color: 'linkedin', text: 'LinkedIn' },
@@ -32,7 +32,7 @@ export default class Contact extends React.Component {
   render() {
     return (
       <Container style={{padding: 20}} fluid id="contact">
-        <h1 className='headings'>Get In Touch</h1>
+        <h1 className='headings'>Contact</h1>
         {/*<Image src='assets/contact.png' centered />*/}
         <Grid centered style={{padding: 20}}>
           <Grid.Row>
@@ -43,7 +43,7 @@ export default class Contact extends React.Component {
                     <Icon name={btn.name} size='big'/>
                   </Button.Content>
                   <Button.Content hidden>
-                    <Icon name='arrow right' size='big'/>
+                    <Icon name='arrow right'/>
                   </Button.Content>
                 </Button>
               )
@@ -53,19 +53,21 @@ export default class Contact extends React.Component {
             <a href='/assets/Kat-Guthrie-resume.pdf' download>Download resume as PDF</a>
           </Grid.Row>
           <Grid.Row>
-            <Form style={{padding: 20}} onSubmit={this.onSubmit} onChange={this.handleChange}>
-              <Form.Group widths='equal'>
-                <Form.Input label='Name' placeholder='Joe Schmoe' />
-                <Form.Input label='Email' placeholder='joe@schmoe.com' />
-              </Form.Group>
-              <Form.TextArea label='Message' placeholder='I like chia seeds'/>
-              <Message
-                success
-                header='Form Completed'
-                content="Thanks! I'll get back to you ASAP"
-              />
-              <Form.Button>Submit</Form.Button>             
-            </Form> 
+            <Segment color="teal" inverted>
+              <Form style={{padding: 20}} onSubmit={this.onSubmit} onChange={this.handleChange} inverted>
+                <Form.Group widths='equal'>
+                  <Form.Input label='Name' placeholder='Joe Schmoe' />
+                  <Form.Input label='Email' placeholder='joe@schmoe.com' />
+                </Form.Group>
+                <Form.TextArea label='Message' placeholder='I like chia seeds'/>
+                <Message
+                  success
+                  header='Form Completed'
+                  content="Thanks! I'll get back to you ASAP"
+                />
+                <Form.Button>Submit</Form.Button>             
+              </Form> 
+            </Segment>
           </Grid.Row>
         </Grid>
       </Container>

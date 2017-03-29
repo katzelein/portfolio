@@ -1,56 +1,75 @@
 import React from 'react';
-import { Container, Item } from 'semantic-ui-react';
+import { Container, Grid, Image, Header, Label } from 'semantic-ui-react';
 
 const projects = [
   {
-    image: 'assets/theAgency.png',
-    meta: 'Heroku',
+    image: 'assets/theagency.png',
     header: 'The Agency',
     description: 'An SMS-based game that turns a user into an Agent, sent on covert missions to gather intelligence data, meet other agents, and get to know New York City.',
-    extra: 'Built with Twilio, Clarifai, Watson Speech-To-Text, React-Redux, Express, Sequelize, and Node.js.',
-    href: 'https://www.youtube.com/watch?v=fIEpi-DPxHw',
-    secondHref: "https://theagencygame.herokuapp.com"
+    tech: ['Twilio', 'Clarifai', 'Watson Speech-To-Text', 'NERDS stack'],
+    links: [
+      { Screencast: 'https://www.youtube.com/watch?v=fIEpi-DPxHw'}, 
+      { Heroku: 'https://theagencygame.herokuapp.com'}, 
+      { Github: 'https://github.com/katzelein/theagencygame'}
+    ]
   },
   {
-    image: 'assets/sonicPi.png',
+    image: 'assets/sonicpi.png',
     header: 'Tech Talk: Sonic Pi',
-    description: 'How to Composer Music with Code: Intro to Sonic Pi',
-    extra: 'A tech talk given at Grace Hopper Academy, 2016', 
-    href: 'https://www.youtube.com/watch?v=ZlIKqWiWJa8'
+    description: 'This tech talk, given at Fullstack Academy\'s Grace Hopper Program, 2016, discusses Sonic Pi: a music composition program that makes writing music accessible for everyone. Topics discussed: the basics of writing notes with either note names or Hz, rests, chords, controlling duration through the use of envelopes, using synths and samples, and looping.',
+    tech: ['Sonic Pi', 'Ruby', 'Music', 'Video'],
+    links: [ {YouTube: 'https://www.youtube.com/watch?v=ZlIKqWiWJa8' }]
   },
   {
-    image: 'assets/bambam.png',
+    image: 'assets/woofstack.png',
     header: 'Woofstack',
     description: 'Facebook for dogs @ Fullstack Academy; owners can log dogs in and out of the building, sending a notification to the school Slack channel so that people are aware of who\'s visiting, what foods they can eat, and where they most want to be pet',
-    extra: 'Built during a one-day hackathon to improve the student life; responsible for models, routes, and Slack integration',
-    href: 'https://github.com/thebeff/woofstack'
+    tech: ['Slack', 'Material-UI', 'React', 'React-Redux', 'Hackathon'],
+    links: [{Github: 'https://github.com/thebeff/woofstack'}]
   },
+  // {
+  //   image: 'assets/rainyDays.jpg',
+  //   header: 'Rainy Days',
+  //   description: 'A self-care app built in the wake of the 2016 US election',
+  //   tech: ['Firebase', 'React', 'Redux', 'Sequelize', 'Express'],
+  //   extra: 'My Stackathon',
+  //   href: 'https://github.com/katzelein/rainydays'
+  // }
 ]
 
 export default class Projects extends React.Component {
   render() {
     return (
-      <Container style={{padding: 20, width: '60%'}} fluid id="projects">
-        {/*<Image src='assets/projects.png' centered />*/}
-        <h1 className='headings'>Portfolio</h1>
-        <Item.Group style={{backgroundColor: '#4594DD'}}> 
-          { projects.map((project, idx) => {
+      <Container style={{padding: 20}} fluid id="projects">
+        <h1 className='headings'>Projects</h1>
+
+        <Grid container >
+          
+          { projects.map((project, idx) => {  
             return (
-              <Item style={{padding: 10}} key={idx}>
-                <Item.Image size='small' src={project.image} />
-                <Item.Content>
-                  <Item.Header as='a' href={project.href} className='item-header'>{project.header}</Item.Header>
-                  <Item.Meta as='a' href={project.secondHref}>{project.meta}</Item.Meta>
-                  <Item.Description className='item-description'>{project.description}</Item.Description>
-                  <Item.Extra className='item-extra'>{project.extra}</Item.Extra>
-                </Item.Content>
-              </Item>
+              <Grid.Row key={idx}>
+                <Grid.Column floated="right" width="4">               
+                  <Image src={project.image} style={{width: 300, float: 'right'}} />
+                </Grid.Column>
+                <Grid.Column floated="left" width="8">
+                  <Header color="blue">{project.header}</Header>
+                  <p style={{color: '#cce6ff'}}>{project.description}</p>
+
+                  { project.tech.map((tech, idx) => {
+                    return (
+                      <Label key={idx} color="teal" >
+                        {tech}
+                      </Label>
+                    )                  
+                  })}
+
+                </Grid.Column>
+              </Grid.Row>
             )
           })}
-        </Item.Group>
+
+        </Grid>
       </Container>
     );
   }
 }
-
-// href="%PUBLIC_URL%/favicon.ico"

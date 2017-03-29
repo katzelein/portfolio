@@ -1,13 +1,23 @@
 import React from 'react';
-import { Container } from 'semantic-ui-react';
+import { Container, Header } from 'semantic-ui-react';
 import Pictures from './Pictures'
 
 export default class Bio extends React.Component {
   render() {
     return (
       <Container style={{padding: 20}} fluid id="bio" textAlign='center'>
-        <h1 className='headings'>About Me</h1>
-        {/*<Image src='assets/aboutMe.png' centered />*/}
+        <Header as='h1' style={{textAlign: 'center', padding: 60}}>
+          <Header.Content className='block-heading'>
+            KAT  
+          </Header.Content>
+          <Header.Content className='cursive-heading'>
+            Guthrie
+          </Header.Content>
+        </Header>
+
+        <Header as='h3' color="teal" textAlign='center'>
+            Full stack JS developer. Former soprano contemporaire. Emotional intelligentsia. Fervent lover of paprika salt.
+        </Header>
         <Pictures style={{padding: 40}} />
       </Container>
     );

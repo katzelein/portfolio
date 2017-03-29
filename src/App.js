@@ -1,47 +1,97 @@
 import React from 'react';
-import { Container, Menu, Header } from 'semantic-ui-react';
-import { Link } from 'react-router'
-// import Bio from './Bio'
-// import Projects from './Projects'
-// import Contact from './Contact'
+import { Container, Menu } from 'semantic-ui-react';
+import Bio from './Bio'
+import Projects from './Projects'
+import Contact from './Contact'
 // import Experience from './Experience'
+
+import Scroll from 'react-scroll';
+const Link       = Scroll.Link;
+// const DirectLink = Scroll.DirectLink;
+const Element    = Scroll.Element;
+const Events     = Scroll.Events;
+const scroll     = Scroll.animateScroll;
+const scrollSpy  = Scroll.scrollSpy;
 
 export default class App extends React.Component {
   constructor() {
     super();
-    this.state = { activeItem: 'bio' }
+    this.state = { activeItem: 'test1' }
+  }
+
+  componentDidMount () {
+    Events.scrollEvent.register('begin', function() {
+      console.log("begin", arguments);
+    });
+    Events.scrollEvent.register('end', function() {
+      console.log("end", arguments);
+    });
+    scrollSpy.update();
+  }
+
+  componentWillUnmount () {
+    Events.scrollEvent.remove('begin');
+    Events.scrollEvent.remove('end');
   }
 
   handleItemClick = (e, { name }) => { 
-    this.setState({ activeItem: name }) }
+    this.setState({ activeItem: name }) 
+  }
+
+  scrollToTop = () => {
+    scroll.scrollToTop();
+  }
 
   render() {
     return (
       <Container id="main" fluid>     
         <div style={{padding: 20}}>
-        <Menu color="teal" inverted pointing secondary>
-          <Menu.Item as={Link} to='/bio' name='bio' href="/bio" active={this.state.activeItem === 'bio'} onClick={this.handleItemClick} />
-          <Menu.Item as={Link} to='/projects' name='projects' href="/projects" active={this.state.activeItem === 'projects'} onClick={this.handleItemClick} />
-          {/*<Menu.Item as={Link} to='/experience' name='experience' href="/experience" active={this.state.activeItem === 'skills'} onClick={this.handleItemClick} />*/}
-          <Menu.Item as={Link} to='/contact' name='contact' href="/contact" active={this.state.activeItem === 'contact'} onClick={this.handleItemClick} />
-        </Menu>
-        {/*<Image style={{padding: 30, width: '50%'}} src='assets/logo.png' centered/> */}
 
-        <Header as='h1' style={{textAlign: 'center', padding: 60}}>
-          <Header.Content className='block-heading'>
-            KAT  
-          </Header.Content>
-          <Header.Content className='cursive-heading'>
-             Guthrie
-          </Header.Content>
-        </Header>
+          <Menu borderless={true} color="blue" inverted fixed="top" style={{marginBottom: 50, height: 40}}>
+            <Menu.Item
+              name='bio'
+              active={this.state.activeItem === 'bio'}
+              onClick={this.handleItemClick} >
+              <Link activeClass="active" to="bio" spy={true} smooth={true} duration={500} >About Me</Link>
+            </Menu.Item>
 
+            <Menu.Item
+              name='projects'
+              active={this.state.activeItem === 'projects'}
+              onClick={this.handleItemClick} >
+              <Link activeClass="active" to="projects" spy={true} smooth={true} duration={500} >Projects</Link>
+            </Menu.Item>
 
-        <Header as='h3' color="teal" textAlign='center'>
-            Full stack JS developer. Former soprano contemporaire. Emotional intelligentsia. Fervent lover of paprika salt.
-        </Header>
-        
-        {this.props.children}
+            {/*<Menu.Item
+              name='experience'
+              active={this.state.activeItem === 'experience'}
+              onClick={this.handleItemClick} >
+              <Link activeClass="active" to="experience" spy={true} smooth={true} duration={500} >Experience</Link>
+            </Menu.Item>*/}
+
+            <Menu.Item
+              name='contact'
+              active={this.state.activeItem === 'contact'}
+              onClick={this.handleItemClick} >
+              <Link activeClass="active" to="contact" spy={true} smooth={true} duration={500} >Contact</Link>
+            </Menu.Item>
+          </Menu>
+          
+          <div style={{paddingTop: 40}}>
+          <Element name="bio" style={{paddingTop: 40}}>
+            <Bio />
+          </Element>
+          <Element name="projects" style={{paddingTop: 40}}>
+            <Projects />
+          </Element>
+          {/*<Element name="experience" style={{paddingTop: 40}}>
+            <Experience />
+          </Element>*/}
+          <Element name="contact" style={{paddingTop: 40}}>
+            <Contact />
+          </Element>
+          </div>
+
         </div>
       </Container>
     );

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Modal, Container, Header, Button, Icon, Image } from 'semantic-ui-react';
+import { Container, Icon } from 'semantic-ui-react';
 
 export default class Popup extends React.Component {
   constructor() {
@@ -17,8 +17,14 @@ export default class Popup extends React.Component {
     return (
       <Container fluid onClick={() => { this.setState({ className: 'open'})}}>
         <Icon size='big' inverted circular name={this.props.icon.name} color='teal' >
-          <div className="line"></div>
+          <svg>
+            <path className="path" stroke="#000000" />
+          </svg>
         </Icon>
+
+
+
+
         {/*<Icon size='big' inverted circular name={this.props.icon.name} color='teal' onClick={this.show(true)} >
           <div className="line"></div>
         </Icon>

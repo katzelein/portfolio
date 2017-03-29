@@ -4,7 +4,6 @@
   margin: 0;
   padding: 0;*/
   color: 'white';
-  height: 100vh;
 }
 
 #footer {
@@ -17,8 +16,9 @@
 }
 
 #bio, #projects, #experience, #contact {
-  /*height: 100vh;*/
+  height: 100vh;
   flex:1;
+  padding-top: 40px;
 }
 
 .circle-container {
@@ -113,36 +113,58 @@
 
 .deg0 { 
   transform: translate(12em); 
-  /*animation: moveDeg0Right 3s infinite;*/
+  
 }
 
 .deg0animate {
-  animation: moveDeg0Right 3s infinite;
+  animation: moveDeg0Right 3s;
+  animation-iteration-count: 1;
+  /*animation-fill-mode: forwards;*/
 }
 
 .deg60 { 
   transform: rotate(60deg) translate(12em) rotate(-60deg); 
-  /*animation: moveDeg60Right 3s infinite;*/
+}
+
+.deg60animate { 
+  animation: moveDeg60Right 3s infinite;
+  animation-iteration-count: 1;
 }
 
 .deg120 { 
   transform: rotate(120deg) translate(12em) rotate(-120deg); 
-  /*animation: moveDeg120Left 3s infinite;*/
+}
+
+.deg120animate { 
+  animation: moveDeg120Left 3s infinite;
+  animation-iteration-count: 1;
 }
 
 .deg180 { 
   transform: translate(-12em); 
-  /*animation: moveDeg180Left 3s infinite;*/
+}
+
+.deg180animate { 
+  animation: moveDeg180Left 3s infinite;
+  animation-iteration-count: 1;
 }
 
 .deg240 { 
   transform: rotate(240deg) translate(12em) rotate(-240deg); 
-  /*animation: moveDeg240Left 3s infinite;*/
+}
+
+.deg240animate { 
+  animation: moveDeg240Left 3s infinite;
+  animation-iteration-count: 1;
 }
 
 .deg300 { 
   transform: rotate(300deg) translate(12em) rotate(-300deg); 
-  /*animation: moveDeg300Right 3s infinite;*/
+}
+
+.deg300animate { 
+  animation: moveDeg300Right 3s infinite;
+  animation-iteration-count: 1;
 }
 
 .all-pictures {
@@ -174,4 +196,16 @@
   font-size: 150px;
   color: #46FCC8;
   /*float: right;*/
+}
+
+.path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 5s linear forwards;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
 }
