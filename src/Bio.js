@@ -5,8 +5,8 @@ import Pictures from './Pictures'
 export default class Bio extends React.Component {
   render() {
     return (
-      <Container style={{padding: 20}} fluid id="bio" textAlign='center'>
-        <div style={{display: 'inline-block'}}>
+      <Container fluid id="bio" textAlign='center'>
+        <div className='bioHeaders'>
           <Header id='header1' attached as='h1' >
             <Header.Content className='block-heading'>
               KAT  
@@ -19,10 +19,11 @@ export default class Bio extends React.Component {
             </Header.Content>
           </Header>
         </div>
-        <Header as='h3' color="teal" textAlign='center'>
+
+        <Header id='blurb' as='h3' color="teal" textAlign='center'>
             Full stack JS developer. Former soprano contemporaire. Emotional intelligentsia. Fervent lover of paprika salt.
         </Header>
-        <Pictures style={{padding: 40}} />
+        <Pictures />
       </Container>
     );
   }

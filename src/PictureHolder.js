@@ -15,7 +15,7 @@ export default class PictureHolder extends React.Component {
 
   render() {
     return (
-      <a href='#' className={this.state.iconClassName} onClick={this.onPictureClick}>   
+      <a href='#' className={this.state.iconClassName} >   
         <Picture 
           icon={this.props.icon} 
           className={this.props.pictureClassName} />
@@ -23,3 +23,5 @@ export default class PictureHolder extends React.Component {
     );
   }
 }
+
+// onClick={this.onPictureClick} --> put this back in to use animations

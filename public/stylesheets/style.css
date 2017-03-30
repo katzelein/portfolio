@@ -2,18 +2,18 @@
   background-image: url('../assets/background.png');
   background-attachment: fixed;
   margin: 0;
-  padding: 0;*/
+  padding: 0;
   color: 'white';
 }
 
-#footer {
+/*#footer {
   padding: 10px;
   right: 0;
   bottom: 0;
   left: 0;
   position: fixed;
   background-color: #0066cc;
-}
+}*/
 
 #bio, #projects, #experience, #contact {
   min-height: 100vh;
@@ -21,11 +21,15 @@
   padding-top: 40px;
 }
 
+#bio {
+  padding: 20px;
+}
+
 .circle-container {
   position: relative;
   width: 24em;
   height: 24em;
-  padding: 2.8em;
+  /*padding: 2.8em;*/
   border-radius: 50%;
   margin: 1.75em auto 0;
   background-image: url('../assets/face2.jpg');
@@ -237,6 +241,7 @@ html { font-size: 100%; }
   padding-top: 60px;
   padding-bottom: 60px;
   float: left;
+  position: relative;
 }
 
 #header2 {
@@ -246,6 +251,7 @@ html { font-size: 100%; }
   padding-top: 60px;
   padding-bottom: 60px;
   float: right;
+  position: relative;
 }
 
 .projectImage {
@@ -253,7 +259,13 @@ html { font-size: 100%; }
   float: right;
 }
 
+.bioHeaders {
+  display: inline-block;
+}
 
+#blurb {
+  clear: both;
+}
 
 
 @media only screen 
