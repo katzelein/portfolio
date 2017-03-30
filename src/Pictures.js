@@ -1,6 +1,5 @@
 import React from 'react';
-import Picture from './Picture';
-import { Popup, Icon } from 'semantic-ui-react';
+
 import PictureHolder from './PictureHolder';
 
 const bioIcons = [

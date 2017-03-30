@@ -43,15 +43,16 @@ export default class Projects extends React.Component {
       <Container style={{padding: 20}} fluid id="projects">
         <h1 className='headings'>Projects</h1>
 
-        <Grid container >
+        <Grid container doubling stackable={true}>
           
           { projects.map((project, idx) => {  
             return (
               <Grid.Row key={idx}>
-                <Grid.Column floated="right" width="4">               
-                  <Image src={project.image} style={{width: 300, float: 'right'}} />
+                <Grid.Column className="gridRight" floated="right" width="4">               
+                  <Image className="projectImage" src={project.image} />
                 </Grid.Column>
-                <Grid.Column floated="left" width="8">
+
+                <Grid.Column className="gridLeft" floated="left" width="8">
                   <Header color="blue">{project.header}</Header>
                   <p style={{color: '#cce6ff'}}>{project.description}</p>
 

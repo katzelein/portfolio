@@ -1,6 +1,5 @@
 import React from 'react';
 import Picture from './Picture';
-import { Popup, Icon } from 'semantic-ui-react';
 
 export default class PictureHolder extends React.Component {
   constructor(props) {

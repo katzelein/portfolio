@@ -6,15 +6,19 @@ export default class Bio extends React.Component {
   render() {
     return (
       <Container style={{padding: 20}} fluid id="bio" textAlign='center'>
-        <Header as='h1' style={{textAlign: 'center', padding: 60}}>
-          <Header.Content className='block-heading'>
-            KAT  
-          </Header.Content>
-          <Header.Content className='cursive-heading'>
-            Guthrie
-          </Header.Content>
-        </Header>
+        <div style={{display: 'inline-block'}}>
+          <Header id='header1' attached as='h1' >
+            <Header.Content className='block-heading'>
+              KAT  
+            </Header.Content>
+          </Header>
 
+          <Header id='header2' attached as='h1' >
+            <Header.Content className='cursive-heading'>
+              Guthrie
+            </Header.Content>
+          </Header>
+        </div>
         <Header as='h3' color="teal" textAlign='center'>
             Full stack JS developer. Former soprano contemporaire. Emotional intelligentsia. Fervent lover of paprika salt.
         </Header>

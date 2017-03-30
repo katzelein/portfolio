@@ -17,9 +17,10 @@ export default class Popup extends React.Component {
     return (
       <Container fluid onClick={() => { this.setState({ className: 'open'})}}>
         <Icon size='big' inverted circular name={this.props.icon.name} color='teal' >
-          <svg>
-            <path className="path" stroke="#000000" />
-          </svg>
+          {/*<svg version="1.1" id="Layer_1" x="0px" y="0px"
+	         width="340px" height="333px" viewBox="0 0 340 333" enableBackground="new 0 0 340 333" >
+            <rect className="path" x="10" y="10" width="30" height="30" stroke="black" fill="transparent" strokeWidth="5"/>
+          </svg>*/}
         </Icon>
 
 

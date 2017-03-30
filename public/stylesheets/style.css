@@ -16,28 +16,28 @@
 }
 
 #bio, #projects, #experience, #contact {
-  height: 100vh;
+  min-height: 100vh;
   flex:1;
   padding-top: 40px;
 }
 
 .circle-container {
-    position: relative;
-    width: 24em;
-    height: 24em;
-    padding: 2.8em;
-    border-radius: 50%;
-    margin: 1.75em auto 0;
-    background-image: url('../assets/face2.jpg');
-    background-position: center; 
-    background-size: 24em 24em;
+  position: relative;
+  width: 24em;
+  height: 24em;
+  padding: 2.8em;
+  border-radius: 50%;
+  margin: 1.75em auto 0;
+  background-image: url('../assets/face2.jpg');
+  background-position: center; 
+  background-size: 24em 24em;
 }
 .circle-container a {
-    display: block;
-    position: absolute;
-    top: 50%; left: 50%;
-    width: 4em; height: 4em;
-    margin: -2em;
+  display: block;
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 4em; height: 4em;
+  margin: -2em;
 }
 .circle-container img { 
   display: block; 
@@ -186,16 +186,14 @@
 
 .block-heading {
   font-family: 'Rammetto One', cursive;
+  font-size: 10rem;
   color: #4594DD;
-  font-size: 150px;
-  /*float: left;*/
 }
 
 .cursive-heading {
   font-family: 'Satisfy', cursive;
-  font-size: 150px;
+  font-size: 10rem;
   color: #46FCC8;
-  /*float: right;*/
 }
 
 .path {
@@ -208,4 +206,76 @@
   to {
     stroke-dashoffset: 0;
   }
+}
+
+/*
+
+// Small screens (default) 
+html { font-size: 100%; }
+
+// Medium screens (640px)
+@media (min-width: 40rem) { 
+  html { font-size: 112%; 
+  }
+  
+  .col-lg-12 { width: 100%; }
+  .col-lg-6 { width: 50%; }
+  // .col-lg-4 { width: 25%; }
+}
+
+// Large screens (1024px)
+@media (min-width: 64rem) { 
+  html { font-size: 120%; }
+}
+
+*/
+
+#header1 {
+  background: transparent;
+  border: 0px;
+  text-align: center;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  float: left;
+}
+
+#header2 {
+  background: transparent;
+  border: 0px;
+  text-align: center;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  float: right;
+}
+
+.projectImage {
+  width: 300px;
+  float: right;
+}
+
+
+
+
+@media only screen 
+  and (max-width: 910px) {
+    body {
+      font-size: 1rem;
+    }
+    #header1 {
+      float: none;
+      font-size: 1rem;
+    }
+    #header2 {
+      float: none;
+      font-size: 1rem;
+    }
+    .gridRight {
+      float: none;
+    }
+    .gridLeft {
+      float: none;
+    }
+    .projectImage {
+      float: none;
+    }
 }
