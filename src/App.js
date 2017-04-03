@@ -62,13 +62,6 @@ export default class App extends React.Component {
               <Link activeClass="active" to="projects" spy={true} smooth={true} duration={500} >Projects</Link>
             </Menu.Item>
 
-            {/*<Menu.Item
-              name='experience'
-              active={this.state.activeItem === 'experience'}
-              onClick={this.handleItemClick} >
-              <Link activeClass="active" to="experience" spy={true} smooth={true} duration={500} >Experience</Link>
-            </Menu.Item>*/}
-
             <Menu.Item
               name='contact'
               active={this.state.activeItem === 'contact'}

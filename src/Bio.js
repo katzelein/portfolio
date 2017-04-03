@@ -1,6 +1,10 @@
 import React from 'react';
-import { Container, Header } from 'semantic-ui-react';
+import { Container, Header, Icon } from 'semantic-ui-react';
 import Pictures from './Pictures'
+
+import Scroll from 'react-scroll'
+
+const Link = Scroll.Link;
 
 export default class Bio extends React.Component {
   render() {
@@ -24,6 +28,9 @@ export default class Bio extends React.Component {
             Full stack JS developer. Former soprano contemporaire. Emotional intelligentsia. Fervent lover of paprika salt.
         </Header>
         <Pictures />
+        {/*<Link activeClass="active" to="test1" spy={true} smooth={true} offset={50} duration={500} onSetActive={this.handleSetActive}>
+          <Icon name="arrow" />
+        </Link>*/}
       </Container>
     );
   }
